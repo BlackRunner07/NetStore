@@ -374,22 +374,30 @@
       <p>Deja tus comentarios o preguntas de nuestros articulos</p>
     </div>
     <div class="col-lg-6 d-flex align-items-stretch" data-aos="fade-up">
-      <div class="form-group">
+      <div class="container-fluid coment">
         <form action="forms/comentarios.php" method="post">
           <input  class="form-control"  type="text" name="coment" id="">
           <div class="container button">
             <input class="btn btn-outline-secondary " type="submit" value="Comentar">
           </div>
         </form>
+        <div class="container show">
         <?php
           include('forms/connection.php');
           $consulta = $connection->query("SELECT*FROM comentarios");
-       while ( $consultaF = $consulta->fetch_assoc()) {
+          while ( $consultaF = $consulta->fetch_assoc()) {
         ?>
-         <option value="<?php echo $row['id_com'] ?>"><?php echo $row['comentario'] ?></option>
+        <table>
+        <td><?php echo $consultaF['comentario'] ?></td>
+        <td><a href="forms/eliminar.php?id_com=<?php echo $consultaF['id_com']; ?>"><input type="button" value="Eliminar" class="btn btn-outline-secondary btn-sm"></a></td>
+        </table>
+        
         <?php
          }
         ?>
+
+        </div>
+        
 
         
 

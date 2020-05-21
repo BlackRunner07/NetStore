@@ -1061,6 +1061,20 @@ section {
   margin-bottom: 15px;
   color: #1f3548;
 }
+/*--------------------------------------------------------------
+# Comentarios
+--------------------------------------------------------------*/
+.coment{
+  text-align: center;
+  margin-left: 50%;
+  display: inline-table;
+}
+.show{
+  border-radius: 5px;
+margin-top: 5%;
+border-style: groove;
+}
+
 
 /*--------------------------------------------------------------
 # Contact Us
