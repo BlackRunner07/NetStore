@@ -365,6 +365,40 @@
 
   </div>
 </section><!-- End Our Portfolio Section -->
+<!-- ======= Our Portfolio Section ======= -->
+<section id="portfolio" class="portfolio section-bg">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="section-title">
+      <h2>Comentarios de la Comunidad</h2>
+      <p>Deja tus comentarios o preguntas de nuestros articulos</p>
+    </div>
+    <div class="col-lg-6 d-flex align-items-stretch" data-aos="fade-up">
+      <div class="form-group">
+        <form action="forms/comentarios.php" method="post">
+          <input  class="form-control"  type="text" name="coment" id="">
+          <div class="container button">
+            <input class="btn btn-outline-secondary " type="submit" value="Comentar">
+          </div>
+        </form>
+        <?php
+          include('forms/connection.php');
+          $consulta = $connection->query("SELECT*FROM comentarios");
+       while ( $consultaF = $consulta->fetch_assoc()) {
+        ?>
+         <option value="<?php echo $row['id_com'] ?>"><?php echo $row['comentario'] ?></option>
+        <?php
+         }
+        ?>
+
+        
+
+
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Our Portfolio Section -->
 
     <!-- ======= Contact Us Section ======= -->
     <section id="contact" class="contact">

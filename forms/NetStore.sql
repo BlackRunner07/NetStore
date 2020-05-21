@@ -7,3 +7,9 @@ create table contact(
     mensaje char(200),
     PRIMARY KEY (id_motivo)
 );
+
+CREATE TABLE comentarios(
+    id_com int(5) auto_increment,
+    comentario char(200),
+    PRIMARY KEY (id_com)
+);
